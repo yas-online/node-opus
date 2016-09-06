@@ -31,6 +31,9 @@
 /* Define to 1 if you have the <alloca.h> header file. */
 /* #undef HAVE_ALLOCA_H */
 
+/* NE10 library is installed on host. Make sure it is on target! */
+/* #undef HAVE_ARM_NE10 */
+
 /* Define to 1 if you have the <dlfcn.h> header file. */
 #define HAVE_DLFCN_H 1
 
@@ -74,9 +77,6 @@
    */
 #define LT_OBJDIR ".libs/"
 
-/* Define to 1 if your C compiler doesn't accept -c and -o together. */
-/* #undef NO_MINUS_C_MINUS_O */
-
 /* Make use of ARM asm optimization */
 /* #undef OPUS_ARM_ASM */
 
@@ -92,17 +92,17 @@
 /* Use ARM NEON inline asm optimizations */
 /* #undef OPUS_ARM_INLINE_NEON */
 
-/* Define if compiler support EDSP Instructions */
+/* Define if assembler supports EDSP instructions */
 /* #undef OPUS_ARM_MAY_HAVE_EDSP */
 
-/* Define if compiler support MEDIA Instructions */
+/* Define if assembler supports ARMv6 media instructions */
 /* #undef OPUS_ARM_MAY_HAVE_MEDIA */
 
-/* Define if compiler support NEON instructions */
+/* Define if compiler supports NEON instructions */
 /* #undef OPUS_ARM_MAY_HAVE_NEON */
 
 /* Compiler supports ARMv7 Neon Intrinsics */
-/* #undef OPUS_ARM_NEON_INTR */
+/* #undef OPUS_ARM_MAY_HAVE_NEON_INTR */
 
 /* Define if binary requires EDSP instruction support */
 /* #undef OPUS_ARM_PRESUME_EDSP */
@@ -113,17 +113,38 @@
 /* Define if binary requires NEON instruction support */
 /* #undef OPUS_ARM_PRESUME_NEON */
 
+/* Define if binary requires NEON intrinsics support */
+/* #undef OPUS_ARM_PRESUME_NEON_INTR */
+
 /* This is a build of OPUS */
 #define OPUS_BUILD /**/
 
 /* Use run-time CPU capabilities detection */
 /* #undef OPUS_HAVE_RTCD */
 
-/* For x86 sse2 instrinsics optimize */
+/* Compiler supports X86 AVX Intrinsics */
+/* #undef OPUS_X86_MAY_HAVE_AVX */
+
+/* Compiler supports X86 SSE Intrinsics */
+/* #undef OPUS_X86_MAY_HAVE_SSE */
+
+/* Compiler supports X86 SSE2 Intrinsics */
 /* #undef OPUS_X86_MAY_HAVE_SSE2 */
 
-/* For x86 sse4.1 instrinsics optimizations */
+/* Compiler supports X86 SSE4.1 Intrinsics */
 /* #undef OPUS_X86_MAY_HAVE_SSE4_1 */
+
+/* Define if binary requires AVX intrinsics support */
+/* #undef OPUS_X86_PRESUME_AVX */
+
+/* Define if binary requires SSE intrinsics support */
+/* #undef OPUS_X86_PRESUME_SSE */
+
+/* Define if binary requires SSE2 intrinsics support */
+/* #undef OPUS_X86_PRESUME_SSE2 */
+
+/* Define if binary requires SSE4.1 intrinsics support */
+/* #undef OPUS_X86_PRESUME_SSE4_1 */
 
 /* Define to the address where bug reports for this package should be sent. */
 #define PACKAGE_BUGREPORT "opus@xiph.org"
@@ -132,7 +153,7 @@
 #define PACKAGE_NAME "opus"
 
 /* Define to the full name and version of this package. */
-#define PACKAGE_STRING "opus 1.1.1-beta-34-g5b20cb0"
+#define PACKAGE_STRING "opus 1.1.2"
 
 /* Define to the one symbol short name of this package. */
 #define PACKAGE_TARNAME "opus"
@@ -141,7 +162,7 @@
 #define PACKAGE_URL ""
 
 /* Define to the version of this package. */
-#define PACKAGE_VERSION "1.1.1-beta-34-g5b20cb0"
+#define PACKAGE_VERSION "1.1.2"
 
 /* Define to 1 if you have the ANSI C header files. */
 #define STDC_HEADERS 1
