@@ -230,29 +230,32 @@
                         'opus/silk/arm/arm_silk_map.c',
                     ],
                 }],
-                ['opus_cpu=="x86"', {
-                    'sources': [
-                        # CELT_SOURCES_SSE =
-                        'opus/celt/x86/celt_lpc_sse.c',
-                        'opus/celt/x86/pitch_sse.c',
-                        'opus/celt/x86/pitch_sse2.c',
-                        'opus/celt/x86/pitch_sse4_1.c',
-                        'opus/celt/x86/x86_celt_map.c',
-                        'opus/celt/x86/x86cpu.c',
+                ['OS=="win"',
+                { 'conditions': [
+                    ['opus_cpu=="x86"', {
+                        'sources': [
+                            # CELT_SOURCES_SSE =
+                            'opus/celt/x86/celt_lpc_sse.c',
+                            'opus/celt/x86/pitch_sse.c',
+                            'opus/celt/x86/pitch_sse2.c',
+                            'opus/celt/x86/pitch_sse4_1.c',
+                            'opus/celt/x86/x86_celt_map.c',
+                            'opus/celt/x86/x86cpu.c',
 
-                        # SILK_SOURCES_SSE =
-                        'opus/silk/x86/NSQ_del_dec_sse.c',
-                        'opus/silk/x86/NSQ_sse.c',
-                        'opus/silk/x86/VAD_sse.c',
-                        'opus/silk/x86/VQ_WMat_EC_sse.c',
-                        'opus/silk/x86/x86_silk_map.c',
+                            # SILK_SOURCES_SSE =
+                            'opus/silk/x86/NSQ_del_dec_sse.c',
+                            'opus/silk/x86/NSQ_sse.c',
+                            'opus/silk/x86/VAD_sse.c',
+                            'opus/silk/x86/VQ_WMat_EC_sse.c',
+                            'opus/silk/x86/x86_silk_map.c',
 
-                        # SILK_SOURCES_FIXED_SSE =
-                        'opus/silk/fixed/x86/burg_modified_FIX_sse.c',
-                        'opus/silk/fixed/x86/prefilter_FIX_sse.c',
-                        'opus/silk/fixed/x86/vector_ops_FIX_sse.c',
-                    ],
-                }],
+                            # SILK_SOURCES_FIXED_SSE =
+                            'opus/silk/fixed/x86/burg_modified_FIX_sse.c',
+                            'opus/silk/fixed/x86/prefilter_FIX_sse.c',
+                            'opus/silk/fixed/x86/vector_ops_FIX_sse.c',
+                        ],
+                    }],
+                ]}],
             ],
             'cflags': [
                 '-fvisibility=hidden',
