@@ -38,10 +38,13 @@
                 'DYNAMIC_ANNOTATIONS_ENABLED=0'
             ],
             'include_dirs': [
-                "<!(node -e \"require('nan')\")"
+                "<!(node -e \"require('nan')\")",
+                "deps/opus/include"
             ],
             'sources': [
                 'src/node-opus.cc',
+                'src/encoder.cc',
+                'src/decoder.cc',
             ],
             'link_settings': {
                 'ldflags': [

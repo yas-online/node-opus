@@ -1,11 +1,7 @@
-
 "use strict";
 
-var OpusEncoder = require( './lib/OpusEncoder' );
-var Encoder = require( './lib/Encoder' );
-var Decoder = require( './lib/Decoder' );
+var bindings = require( 'bindings' )( 'node-opus' );
+module.exports = exports = bindings;
 
-exports.OpusEncoder = OpusEncoder;
-exports.Encoder = Encoder;
-exports.Decoder = Decoder;
-
+exports.Encoder = require( './lib/Encoder' );
+exports.Decoder = require( './lib/Decoder' );
