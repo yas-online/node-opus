@@ -16,6 +16,9 @@
 /* Assertions */
 /* #undef ENABLE_ASSERTIONS */
 
+/* Ambisonics Support */
+/* #undef ENABLE_EXPERIMENTAL_AMBISONICS */
+
 /* Debug fixed-point implementation */
 /* #undef FIXED_DEBUG */
 
@@ -73,8 +76,7 @@
 /* Define to 1 if you have the `__malloc_hook' function. */
 #define HAVE___MALLOC_HOOK 1
 
-/* Define to the sub-directory in which libtool stores uninstalled libraries.
-   */
+/* Define to the sub-directory where libtool stores uninstalled libraries. */
 #define LT_OBJDIR ".libs/"
 
 /* Make use of ARM asm optimization */
@@ -101,8 +103,11 @@
 /* Define if compiler supports NEON instructions */
 /* #undef OPUS_ARM_MAY_HAVE_NEON */
 
-/* Compiler supports ARMv7 Neon Intrinsics */
+/* Compiler supports ARMv7/Aarch64 Neon Intrinsics */
 /* #undef OPUS_ARM_MAY_HAVE_NEON_INTR */
+
+/* Define if binary requires Aarch64 Neon Intrinsics */
+/* #undef OPUS_ARM_PRESUME_AARCH64_NEON_INTR */
 
 /* Define if binary requires EDSP instruction support */
 /* #undef OPUS_ARM_PRESUME_EDSP */
@@ -117,7 +122,7 @@
 /* #undef OPUS_ARM_PRESUME_NEON_INTR */
 
 /* This is a build of OPUS */
-#define OPUS_BUILD /**/
+#define OPUS_BUILD
 
 /* Use run-time CPU capabilities detection */
 /* #undef OPUS_HAVE_RTCD */
@@ -153,7 +158,7 @@
 #define PACKAGE_NAME "opus"
 
 /* Define to the full name and version of this package. */
-#define PACKAGE_STRING "opus 1.1.2"
+#define PACKAGE_STRING "opus 1.1.3"
 
 /* Define to the one symbol short name of this package. */
 #define PACKAGE_TARNAME "opus"
@@ -162,7 +167,7 @@
 #define PACKAGE_URL ""
 
 /* Define to the version of this package. */
-#define PACKAGE_VERSION "1.1.2"
+#define PACKAGE_VERSION "1.1.3"
 
 /* Define to 1 if you have the ANSI C header files. */
 #define STDC_HEADERS 1

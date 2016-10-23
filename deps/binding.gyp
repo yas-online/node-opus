@@ -189,6 +189,8 @@
                 # silk/x86/x86_silk_map.c
                 # silk/x86/VAD_sse.c
                 # silk/x86/VQ_WMat_EC_sse.c
+                # silk/arm/NSQ_neon.c
+                # silk/arm/arm_silk_map.c
 
                 # SILK_SOURCES_FIXED =
                 # silk/fixed/LTP_analysis_filter_FIX.c
